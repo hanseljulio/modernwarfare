@@ -1,0 +1,17 @@
+.menu-bar-div-active {
+    animation: myAnim 0.2s ease 0s 1 normal forwards;
+}
+
+.menu-bar-div-release {
+    animation: myAnim 0.2s ease 0s 1 reverse forwards;
+}
+
+@keyframes myAnim {
+	0% {
+		transform: scaleX(0);
+	}
+
+	100% {
+		transform: scaleX(1);
+	}
+}
