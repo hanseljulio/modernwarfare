@@ -28,7 +28,7 @@ function App() {
   
   return (
     <div className="min-h-screen bg-slate-300 main-menu-div bg-[url('../public/img/12467021.jpg')] bg-cover relative z-0">
-      <iframe src="" allow="autoplay" id="audio" style={{display: "none"}}></iframe>
+      <iframe src="" title='music' allow="autoplay" id="audio" style={{display: "none"}}></iframe>
       <audio id="player" autoPlay loop src={menuMusic} />
       <div className="account-name-section bg-transparent text-right absolute right-[100px] w-[500px] z-10 top-[50px]">
         <h1 className='text-white'>RamsaysaurusRex#1515</h1>
