@@ -6,6 +6,7 @@ import campaignSFX from "./audio/campaign.wav"
 import multiplayerSFX from "./audio/multiplayer.wav"
 import coopSFX from "./audio/coop.wav"
 import menuMusic from "./audio/menumusic.mp3"
+import {BsGear} from "react-icons/bs"
 
 function App() {
   const [showCampaign, setShowCampaign] = useState<boolean>(false)
@@ -26,10 +27,14 @@ function App() {
 
   
   return (
-    <div className="min-h-screen bg-slate-300 main-menu-div bg-[url('../public/img/12467021.jpg')] bg-cover">
+    <div className="min-h-screen bg-slate-300 main-menu-div bg-[url('../public/img/12467021.jpg')] bg-cover relative z-0">
       <iframe src="" allow="autoplay" id="audio" style={{display: "none"}}></iframe>
       <audio id="player" autoPlay loop src={menuMusic} />
-      <div id='initClick' className="menu-div flex justify-around text-[#8aacca] text-[22px] font-medium mx-[50px] z-0">
+      <div className="account-name-section bg-transparent text-right absolute right-[100px] w-[500px] z-10 top-[50px]">
+        <h1 className='text-white'>RamsaysaurusRex#1515</h1>
+        <h1>FRIENDS LIST HERE</h1>
+      </div>
+      <div id='initClick' className="menu-div flex justify-around text-[#8aacca] text-[22px] font-medium mx-[50px]">
         <div className="campaign-section h-screen" onMouseOver={() => {
           setShowCampaign(true)
           playCampaignSound();
@@ -51,9 +56,14 @@ function App() {
           <h1 className={`bg-slate-700 px-8 py-1 flex items-center mt-[500px] ${showCoop ? "hidden" : ""}`}>CO-OP</h1>
           {showCoop && <MenuBar video='./vids/MWCoopNoSound.mp4' title='CO-OP' description='Various cooperative modes and missions await.'/>}
         </div>
-        
       </div>
-      
+      <div className="footer-section flex justify-between text-right absolute w-full z-10 bottom-0 bg-slate-500 bg-opacity-[0.05] py-[18px]">
+        <div className="button-section flex ml-[100px] gap-5 text-[12px]">
+          <h1 className='text-white bg-gray-700 px-3 py-1 hover:cursor-pointer'>Quit to Desktop</h1>
+          <h1 className='text-white bg-gray-700 px-3 py-1 flex items-center gap-2 hover:cursor-pointer'><BsGear />Options</h1>
+        </div>
+        <h1 className='text-white mr-[100px]'>Welcome to Modern Warfare. Stay frosty.</h1>
+      </div>
     </div>
   );
 }
